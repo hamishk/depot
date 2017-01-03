@@ -23,3 +23,4 @@ Things you may want to cover:
 
 * ...
 # depot
+Just adding some lines here to test a commit without having user.email set
