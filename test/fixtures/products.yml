@@ -11,3 +11,16 @@ two:
   description: MyText
   image_url: MyString
   price: 9.99
+
+book_about_dogs:
+  title: The Dog Book
+  description:
+    This is the finest book about dogs you can possibly purchase
+  image_url: dog_book.jpg
+  price: 500.01
+
+title_too_short:
+  title: tooshort #just 9 characters
+  description: also short!
+  image_url: shortbook.jpg
+  price: 20.01
