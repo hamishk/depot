@@ -10,10 +10,12 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
       price:        19.95
     }
   end
-
+  
   test "should get index" do
     get products_url
     assert_response :success
+    #TODO: should insert some assert_select tests here 
+    # (count entries, check for a given title, check abbreviation)
   end
 
   test "should get new" do
