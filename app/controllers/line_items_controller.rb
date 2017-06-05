@@ -31,6 +31,9 @@ class LineItemsController < ApplicationController
 
     respond_to do |format|
       if @line_item.save
+        # reset store visit counter
+        session[:index_visit_count] = 0
+
         format.html { redirect_to @line_item.cart, 
           notice: 'Line item was successfully created.' }
         format.json { render :show, status: :created, location: @line_item }

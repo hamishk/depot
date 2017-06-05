@@ -1,4 +1,8 @@
 <p id="notice"><%= notice %></p>
+<% if session[:index_visit_count] > 5 %>
+  <p>You have visited this page <%= pluralize(session[:index_visit_count],"time") %> 
+  without adding anything to your cart.</p>
+<% end %>
 
 <h1>Your Doge Catalog</h1>
 
