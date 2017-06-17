@@ -21,3 +21,11 @@
     <% end %>
   <% end %>
 <% end %>
+<!-- adding in a section for updating the cart id of the session -->
+<div>
+  <%= form_tag(debug_update_session_path) do %>
+    <%= label_tag(:cart_id, "Update cart id to:") %>
+    <%= text_field_tag(:cart_id) %>
+    <%= submit_tag("Update") %>
+  <% end %>
+</div>

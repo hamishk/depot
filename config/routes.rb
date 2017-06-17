@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  post 'debug/update_session'
+
   resources :line_items
   resources :carts
   root 'store#index', as: 'store_index'
