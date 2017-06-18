@@ -23,7 +23,7 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
 
     assert_select 'h2', 'Your Shopping Cart, Sir'
-    assert_select 'li', /Dog Book/
+    assert_select 'td', 'The Dog Book'
 
   end
 
