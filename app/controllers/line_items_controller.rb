@@ -34,7 +34,7 @@ class LineItemsController < ApplicationController
         # reset store visit counter
         session[:index_visit_count] = 0
 
-        format.html { redirect_to @line_item.cart }
+        format.html { redirect_to store_index_url }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }
