@@ -23,8 +23,20 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
 
     assert_select 'h2', 'Your Shopping Cart, Sir'
-    assert_select 'li', /Dog Book/
+    assert_select 'td', 'The Dog Book'
 
+  end
+
+  test "should create line_item via ajax" do
+    assert_difference('LineItem.count') do
+      post line_items_url, params: { product_id: products(:book_about_dogs).id },
+        xhr: true
+    end
+
+    assert_response :success
+    assert_select_jquery :html, "#cart" do
+      assert_select 'tr#current_item td', /The Dog Book/
+    end
   end
 
   test "should show line_item" do
@@ -38,8 +50,9 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update line_item" do
-    patch line_item_url(@line_item), params: { line_item: { cart_id: @line_item.cart_id, product_id: @line_item.product_id } }
-    assert_redirected_to line_item_url(@line_item)
+    patch line_item_url(@line_item),
+      params: { line_item: { product_id: @line_item.product_id } }
+    assert_redirected_to @line_item.cart # I think this is just a relative path
   end
 
   test "should destroy line_item" do
@@ -47,6 +60,6 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
       delete line_item_url(@line_item)
     end
 
-    assert_redirected_to line_items_url
+    assert_redirected_to store_index_url
   end
 end
