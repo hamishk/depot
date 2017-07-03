@@ -46,7 +46,6 @@ class ProductsController < ApplicationController
         format.json { render :show, status: :ok, location: @product }
 
         @products = Product.all
-        @is_updating = true
         ActionCable.server.broadcast 'products',
           html: render_to_string('store/index', layout: false)
       else
