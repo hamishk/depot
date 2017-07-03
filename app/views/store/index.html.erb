@@ -10,7 +10,12 @@
 <% cache @products do %>
   <% @products.each do |product| %>
     <% cache product do %>
-      <div class="entry">
+      <% if product == @updated_product %>
+        <div class="entry" id="updated_product"> 
+        <!-- For action cable updates we tag the updated item -->
+      <% else %>
+        <div class="entry">
+      <% end %>
         <%= form_tag line_items_path(product_id: product), remote: true, authenticity_token: true do %>
         <!-- apparently I have to specify to use an auth token here, not sure why -->
           <%= image_submit_tag product.image_url, class: "img_button" %>

@@ -12,6 +12,12 @@
   }
 
   /* An entry in the Store catalog */
+  
+  #updated_product {
+  /* Let's show which item was just updated via action cable */
+  background-color: #fffca8;
+  }
+
   .entry {
     overflow: auto;
     margin-top: 1em;
