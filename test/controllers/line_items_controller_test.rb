@@ -60,6 +60,6 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
       delete line_item_url(@line_item)
     end
 
-    assert_redirected_to cart_url(@line_item.cart) # this should be absolute
+    assert_redirected_to store_index_url
   end
 end

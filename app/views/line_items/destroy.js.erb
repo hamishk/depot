@@ -1,0 +1,12 @@
+if ($('#cart tr').length == 2 && $('#cart tr td').html() == "1×") {
+  // If we're down to 2 rows before the delete was called,
+  // and we only had one item left in the cart (thus it'll be)
+  // empty when we render, let's simply fade out out the cart.
+ $('#cart').hide('blind', 1000); 
+} else {
+  // Otherwise re-render the cart with one less item!
+  $('#cart').html("<%=j render(@cart) %>");
+}
+
+$('#current_item').css({'background-color':'#f96666'}).
+  animate({'background-color':'#114411'}, 1000);
