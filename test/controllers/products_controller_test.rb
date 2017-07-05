@@ -1,7 +1,9 @@
 require 'test_helper'
+require 'minitest/mock'
 
 class ProductsControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @action_cable = ActionCable.server
     @product = products(:one)
     @update = {
       title:        'Lorem Ipsum',
@@ -42,8 +44,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update product" do
+    # action cable broadcast can't be tested yet (?) so we should try to stub it
     patch product_url(@product), params: { product: @update }
-    # assert_redirected_to product_url(@product)
+    assert_redirected_to product_url(@product)
   end
 
   test "can't delete product in cart" do
