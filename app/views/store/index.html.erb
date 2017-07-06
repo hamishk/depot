@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<!-- let's log the index visit -->
+<% session[:index_visit_count] += 1 %>
 <% if session[:index_visit_count] > 5 %>
   <p>You have visited this page <%= pluralize(session[:index_visit_count],"time") %> 
   without adding anything to your cart.</p>
