@@ -5,5 +5,5 @@ one:
   cart: one
 
 two:
-  product: two
-  cart: two
+  product: book_about_dogs
+  order: one

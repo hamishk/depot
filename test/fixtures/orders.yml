@@ -1,10 +1,10 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  address: MyText
-  email: MyString
-  pay_type: 1
+  name: Hamish Dopefiend
+  address: 1337 Danks Street, Weedtown
+  email: pot_lover53@iloveweed.com
+  pay_type: Purchase order
 
 two:
   name: MyString
